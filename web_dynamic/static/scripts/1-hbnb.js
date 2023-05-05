@@ -1,12 +1,14 @@
-const love = window.$;
-document.addEventListener('DOMContentLoaded', () => {
+const w = window.$;
+
+w(function () {
   const amenities = {};
-  love('input[type="checkbox"]').change(() => {
-    if (love(this).is(':checked')) {
-      amenities[love(this).attr('data-id')] = amenities[love(this).attr('data-name')];
+  w('div.amenities li input').change(function () {
+    if (w(this).is(':checked')) {
+      amenities[w(this).attr('data-id')] = w(this).attr('data-name');
     } else {
-      delete amenities[love(this).attr('data-id')];
+      delete amenities[w(this).attr('data-id')];
     }
-    love('div.amenities h4').text(Object.values(amenities).join(', '));
+    w('div.amenities h4').text(Object.values(amenities).join(', '));
   });
 });
+console.log('I am in the browser');
