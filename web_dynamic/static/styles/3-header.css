@@ -9,3 +9,13 @@ header .logo {
     left: 20px;
     height: 100%;
 }
+header .status {
+    margin-right: 30px;
+    border-radius: 40px;
+    background-color: #cccccc;
+    padding: 0px auto;
+}
+
+.available {
+    background-color: #ff545f;
+}
