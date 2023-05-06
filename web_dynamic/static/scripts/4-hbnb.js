@@ -68,15 +68,17 @@ w.ajax({
 });
 
 // function for button
-w('button').click(() => {
-  const amenities = {};
-  const data = { amenities: Object.keys(amenities) };
-  w.ajax({
-    type: 'POST',
-    url: placesSearchUrl,
-    contentType: 'application/json',
-    dataType: 'json',
-    data: JSON.stringify(data),
-    success: placesAmenity
+w('document').ready(() => {
+  w('button').click(() => {
+    const amenities = {};
+    const data = { amenities: Object.keys(amenities) };
+    w.ajax({
+      type: 'POST',
+      url: placesSearchUrl,
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify(data),
+      success: placesAmenity
+    });
   });
 });
