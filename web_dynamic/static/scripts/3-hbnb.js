@@ -16,6 +16,9 @@ console.log('I am in the browser');
 // http://0.0.0.0:5001/api/v1/status/
 // http://localhost:5001/api/v1/status/
 
+// using this url below is my alx localhost address,use your localhost for it to work.
+// http://7c40a4f05206.85438db0.alx-cod.online:5001/api/v1/status/
+
 const url = 'http://localhost:5001/api/v1/status/';
 
 const checkStatus = (data) => {
@@ -33,6 +36,9 @@ w.get(url, checkStatus);
 
 // making ajax post request to http://0.0.0.0:5001/api/v1/places_search/
 // to display contents
+// using this url below is my alx localhost address,use your localhost for it to work.
+// http://7c40a4f05206.85438db0.alx-cod.online:5001/api/v1/places_search/
+
 const placesSearchUrl = 'http://localhost:5001/api/v1/places_search/';
 w.ajax({
   type: 'POST',
@@ -52,9 +58,6 @@ w.ajax({
               <div class="number_rooms">${place.number_rooms}</div>
               <div class="number_bathrooms">${place.number_bathrooms}</div>
         </div>
-        <div class="user">
-              <b>Owner:</b> ${place.user.first_name} ${place.user.last_name}
-            </div>
             <div class="description">
           ${place.description}
             </div>
