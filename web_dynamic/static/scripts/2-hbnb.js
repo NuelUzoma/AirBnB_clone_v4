@@ -13,14 +13,17 @@ w(function () {
 });
 console.log('I am in the browser');
 
-const url = 'http://0.0.0.0:5001/api/v1/status/';
+const url = 'http://localhost:5001/api/v1/status/';
 
 const checkStatus = (data) => {
-  if (data.status === 'OK') {
-    w('div#api_status').addClass('available');
-  } else {
-    w('div#api_status').removeClass('available');
-  }
+  w('document').ready(() => {
+    if (data.status === 'OK') {
+      w('div#api_status').addClass('available');
+    } else {
+      w('div#api_status').removeClass('available');
+    }
+    console.log(data.status);
+  });
 };
 
 w.get(url, checkStatus);
