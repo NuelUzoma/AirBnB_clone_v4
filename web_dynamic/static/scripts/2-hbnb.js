@@ -13,6 +13,8 @@ w(function () {
 });
 console.log('I am in the browser');
 
+// http://0.0.0.0:5001/api/v1/status/
+
 const url = 'http://localhost:5001/api/v1/status/';
 
 const checkStatus = (data) => {
