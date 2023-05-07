@@ -3,9 +3,28 @@ header {
     height: 70px;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
+<<<<<<< HEAD
+    display: grid;
+=======
+>>>>>>> master
 }
 header .logo {
     background: url("../images/logo.png") no-repeat;
     left: 20px;
     height: 100%;
 }
+<<<<<<< HEAD
+#api_status {
+    right: 30px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    padding: 30px 30px;
+    position: absolute;
+    margin-top: 5px;
+}
+
+#api_status.available {
+    background-color: #ff545f;
+}
+=======
+>>>>>>> master

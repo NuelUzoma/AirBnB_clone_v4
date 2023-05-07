@@ -11,7 +11,11 @@ from flasgger.utils import swag_from
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
+<<<<<<< HEAD
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
+=======
 cors = CORS(app, resources={r"/api/vi/*": {"origins": "*"}})
+>>>>>>> master
 
 
 @app.teardown_appcontext

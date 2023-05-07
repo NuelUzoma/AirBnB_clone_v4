@@ -1,12 +1,10 @@
-#!/usr/bin/node
-
 const w = window.$;
-const url = 'http//localhost:5001/api/v1/status/';
+const url = 'http://localhost:5001/api/v1/status/';
 const placesSearchUrl = 'http://localhost:5001/api/v1/places_search/';
 // http://0.0.0.0:5001/api/v1/status/
 // http://localhost:5001/api/v1/status/
-// alx-cod.online address changed to mine.
-// http://da0707e367e3.3e24de83.alx-cod.online:5001/api/v1/status/
+// using this url below is my alx localhost address,use your localhost for it to work.
+// http://7c40a4f05206.85438db0.alx-cod.online:5001/api/v1/status/
 
 w(function () {
   const amenities = {};
@@ -36,8 +34,8 @@ w.get(url, checkStatus);
 
 // making ajax post request to http://0.0.0.0:5001/api/v1/places_search/
 // to display contents
-// alx-cod online address changed to mine.
-// http://da0707e367e3.3e24de83.alx-cod.online:5001/api/v1/places_search/
+// using this url below is my alx localhost address,use your localhost for it to work.
+// http://7c40a4f05206.85438db0.alx-cod.online:5001/api/v1/places_search/
 
 // function for places
 const placesAmenity = (result) => {
@@ -61,42 +59,6 @@ const placesAmenity = (result) => {
   });
 };
 
-// The function below is for States
-const states = {};
-const cities = {};
-w('div.locations ul.popover li input[type="checkbox"]').change(function() {
-    if (this.checked) {
-        if (this.dataset['id'] in states) {
-            delete states[this.dataset['id']]
-        }
-        cities[this.dataset['id']] = this.dataset['name'];
-    } else {
-        delete cities[this.dataset['id']];
-    }
-    if (Object.keys(cities).length > 0) {
-        w('div.locations h4').text(Object.values(cities).join(', '));
-    } else {
-        w('div.locations h4').html('&nbsp;');
-    }
-});
-
-// Function for Cities
-w('div.locations ul.popover li h2 input[type="checkbox"]').change(function () {
-  if (this.checked) {
-    if (this.dataset['id'] in cities) {
-      delete cities[this.dataset['id']];
-    }
-    states[this.dataset['id']] = this.dataset['name'];
-  } else {
-    delete states[this.dataset['id']];
-  }
-  if (Object.keys(states).length > 0) {
-    w('div.locations h4').text(Object.values(states).join(', '));
-  } else {
-    w('div.locations h4').html('&nbsp;');
-  }
-});
-
 w.ajax({
   type: 'POST',
   url: placesSearchUrl,
@@ -109,13 +71,7 @@ w.ajax({
 w('document').ready(() => {
   w('button').click(() => {
     const amenities = {};
-    const cities = {};
-    const states = {};
-    const data = {
-        amenities: Object.keys(amenities),
-        cities: Object.keys(cities),
-        states: Object.keys(states)
-    };
+    const data = { amenities: Object.keys(amenities) };
     w.ajax({
       type: 'POST',
       url: placesSearchUrl,

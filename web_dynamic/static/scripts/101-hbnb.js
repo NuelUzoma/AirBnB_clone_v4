@@ -136,9 +136,9 @@ w('document').ready(() => {
     const cities = {};
     const states = {};
     const data = {
-        amenities: Object.keys(amenities),
-        cities: Object.keys(cities),
-        states: Object.keys(states)
+      amenities: Object.keys(amenities),
+      cities: Object.keys(cities),
+      states: Object.keys(states)
     };
     w.ajax({
       type: 'POST',
