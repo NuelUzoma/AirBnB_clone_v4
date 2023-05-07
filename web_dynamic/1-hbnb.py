@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """ Starts a Flash Web Application """
+=======
+""" Starts a Flask Web Application """
+>>>>>>> master
 from models import storage
 from models.state import State
 from models.city import City
@@ -8,8 +12,11 @@ from models.place import Place
 from os import environ
 from flask import Flask, render_template
 import uuid
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
 app = Flask(__name__)
 # app.jinja_env.trim_blocks = True
 # app.jinja_env.lstrip_blocks = True
@@ -21,7 +28,11 @@ def close_db(error):
     storage.close()
 
 
+<<<<<<< HEAD
 @app.route('/1-hbnb/', strict_slashes=False)
+=======
+@app.route('/1-hbnb', strict_slashes=False)
+>>>>>>> master
 def hbnb():
     """ HBNB is alive! """
     states = storage.all(State).values()
@@ -37,11 +48,19 @@ def hbnb():
     places = storage.all(Place).values()
     places = sorted(places, key=lambda k: k.name)
 
+<<<<<<< HEAD
+=======
+    cache_id = uuid.uuid4()
+>>>>>>> master
     return render_template('1-hbnb.html',
                            states=st_ct,
                            amenities=amenities,
                            places=places,
+<<<<<<< HEAD
                            cache_id=uuid.uuid4())
+=======
+                           cache_id=cache_id)
+>>>>>>> master
 
 
 if __name__ == "__main__":

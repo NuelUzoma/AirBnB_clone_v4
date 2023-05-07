@@ -6,11 +6,14 @@
     border: 1px solid #DDDDDD;
     border-radius: 4px;
 }
+<<<<<<< HEAD
 
 input {
     margin-left: 10px;
 }
 
+=======
+>>>>>>> master
 button {
     position: absolute;
     font-size: 18px;
@@ -103,6 +106,18 @@ button:hover {
 }
 
 .amenities:hover .popover,
+<<<<<<< HEAD
 .locations:hover .popover {
     visibility: visible;
 }
+=======
+.show-reviews:hover .reviews,
+.locations:hover .popover {
+    visibility: visible;
+}
+
+.reviews {
+    margin-right: 10px;
+    float: right;
+}
+>>>>>>> master
