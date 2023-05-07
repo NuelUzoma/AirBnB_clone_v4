@@ -98,6 +98,12 @@ button:hover {
 }
 
 .amenities:hover .popover,
+.show-reviews:hover .reviews,
 .locations:hover .popover {
     visibility: visible;
+}
+
+.reviews {
+    margin-right: 10px;
+    float: right;
 }
